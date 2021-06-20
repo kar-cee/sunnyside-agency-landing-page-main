@@ -20,7 +20,7 @@ body{
         position: relative;
     }
     @include responsive($mobile){
-       background: url(./images/mobile/image-header.jpg) center ;
+       background: url(../images/mobile/image-header.jpg) center ;
        background-size: contain;
        width: 100vw;
        height: 100vw*1.43;
@@ -251,19 +251,19 @@ body{
         }
 }
 .imgbox{
-    background: url(./images/desktop/image-transform.jpg) center;
+    background: url(../images/desktop/image-transform.jpg) center;
     background-size: cover;
         height: 600px
 }
 .box2{
     @extend .imgbox;
-    background: url(./images/desktop/image-stand-out.jpg) center;
+    background: url(../images/desktop/image-stand-out.jpg) center;
     // background-size: cover;
     
 }
 
 .graphic{
-background: url(./images/desktop/image-graphic-design.jpg) center;
+background: url(../images/desktop/image-graphic-design.jpg) center;
 background-size: cover;
 @include flexCenter(flex-end,center ,column );
 padding: auto 100px;
@@ -292,7 +292,7 @@ padding: auto 100px;
 
 .photography{
     @extend .graphic;
-    background-image: url(./images/desktop/image-photography.jpg);
+    background-image: url(../images/desktop/image-photography.jpg);
   .fraunces{
       color: $Dark-blue;
   }
@@ -398,15 +398,15 @@ padding: auto 100px;
         background-size: contain;
     }
      &-two{
-        background: url(./images/desktop/image-gallery-orange.jpg) center;
+        background: url(../images/desktop/image-gallery-orange.jpg) center;
         background-size: contain;
     }
      &-three{
-        background: url(./images/desktop/image-gallery-cone.jpg) center;
+        background: url(../images/desktop/image-gallery-cone.jpg) center;
         background-size: contain;
     }
      &-four{
-        background: url(./images/desktop/image-gallery-sugarcubes.jpg) center;
+        background: url(../images/desktop/image-gallery-sugarcubes.jpg) center;
         background-size: contain;
     }
 }
