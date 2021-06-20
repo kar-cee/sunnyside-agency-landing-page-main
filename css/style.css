@@ -49,7 +49,7 @@ body {
 }
 
 .header {
-  background: url(/images/desktop/image-header.JPG) center;
+  background: url(./images/desktop/image-header.JPG) center;
   background-size: cover;
   height: 800px;
   width: 100vw;
