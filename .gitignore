@@ -16,4 +16,6 @@
 .prettierignore
 style-guide.md
 maxin/
-.vscode
+.vscode/
+design/
+readmeAndgit/

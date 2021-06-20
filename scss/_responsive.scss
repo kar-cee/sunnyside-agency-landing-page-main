@@ -1,0 +1,50 @@
+
+//@mixin to not to repeat frequent codes
+@mixin flexCenter($vertical,$horizontal,$direction) {
+    display: flex;
+    justify-content: $vertical;
+    align-items: $horizontal;
+    flex-direction: $direction;
+}
+
+@mixin position($top,$left) {
+    position:absolute;
+    top:$top;
+    left:$left;
+}
+
+//my approach to responsive web site in sass.
+$mobile:488px;
+$tab:800px;
+$desktop:1440px;
+
+@mixin responsive($width) {
+        @if $width==$mobile{
+            @media screen and (max-width:$mobile) {
+                @content;
+            }
+        }
+        @else if $width==$tab{
+            @media screen and (max-width:$tab) and (min-width:$mobile){
+                @content;
+            }
+        }@else if $width==$desktop{
+            @media screen and (max-width:$desktop)and(min-width:$tab){
+                @content;
+            }
+        }
+    
+}
+
+//just little bit of animation for arrow;
+
+@keyframes arrrow-up-down {
+    0%{
+        opacity: 0.2;
+        transform:translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}

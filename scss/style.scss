@@ -1,0 +1,453 @@
+@import './color';
+@import'./reset';
+@import './responsive';
+
+body{
+    font: 600 18px 'Barlow',sans-serif;
+      color: $Dark-grayish;
+     width: 100vw;
+    max-width: 1440px;
+}
+
+.header{
+    background:url(/images/desktop/image-header.jpg) center;
+    background-size: cover;
+    
+    .menu{
+        display: none;
+    }
+    @include responsive($tab){
+        position: relative;
+    }
+    @include responsive($mobile){
+       background: url(/images/mobile/image-header.jpg) center ;
+       background-size: contain;
+       width: 100vw;
+       height: 100vw*1.43;
+       text-align: center;
+       position: relative;
+       .menu{
+           display: inline-block;
+           position: absolute;
+           top:1rem;
+           right:.6rem;
+       }
+    };
+    
+      height: 800px;
+     width: 100vw;
+    max-width: 1440px;
+    @include flexCenter(start,center ,column );
+    nav{
+        @include flexCenter(space-between, center,row );
+        width: 100%;
+    margin: 30px auto 100px auto;
+    img{
+        margin-left: 1.3rem;
+    }
+    .navlink{
+        @include flexCenter(space-around, center, row);
+        width: 45vw;
+        color: $White;
+        @include responsive($tab){
+          position: absolute;
+          right:0;
+          width: 70vw;
+        }
+        @include responsive($mobile){
+            height: 65vw;
+            width: 90vw;
+            background:$White;
+            color: $Dark-blue;
+            flex-direction: column;
+            position: absolute;
+            top:3.5rem;
+            right: 1rem;
+            z-index: 10;
+            &::before{
+                content: "";
+                border:$White 10px solid;
+                border-left-color: transparent;
+                border-top-color: transparent;
+                position: absolute;
+                top:-19px;
+                right: 0;
+                z-index: -1;
+            }
+            display: none;
+            
+        }
+
+        
+        
+
+        .link{
+        position: relative;
+            cursor: pointer;
+        z-index: 10;
+
+        &::after{
+            content: '';
+            height: 130%;
+            width: 130%;
+            border-radius: 6px;
+            @include position(-15%,-15%);
+            background: $soft-red;
+            opacity: .8;
+            z-index: -1;
+            transition:all 250ms ease;
+            transform: scaleY(0);
+        }
+        &:hover::after{
+          transform: scaleY(1);
+          transform-origin:bottom;
+        }
+        @include responsive($mobile){
+            color:$Dark-grayish;
+        }
+       } 
+        .Contact{
+            background-color: $White;
+            @include flexCenter(center,center ,row );
+            color: $Very-dark;
+            border-radius: 40px;
+            height: 50px;
+            width: 130px;
+            text-transform: uppercase;
+            @include responsive($tab){
+                font-size: 1rem;
+                background: none;
+                height:30px ;
+                width: 100px;
+            }
+            @include responsive($mobile){
+            background-color: $Yellow;
+            font-size: 1rem;
+        }
+            &:hover{
+                color: $White;
+                background: $transparent;
+                cursor: pointer;
+                @include responsive($tab){
+                    background:$soft-red;
+                    height:30px ;
+                    width: 100px;
+                }
+                @include responsive($mobile){
+                 background-color: $soft-red;
+        }
+            }
+        }
+    }
+    @include responsive($mobile){ 
+        .toggle{
+                display:flex;
+            }
+        }   
+   
+}
+    h2{              //to intend a paragraph ctrl+]
+        font: 800 3rem 'Fraunces', serif;;
+        color: $White;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 140px;
+        @include responsive($mobile){
+            margin-bottom: 30px;
+        }
+        @include responsive($tab){
+            border-bottom: 2px solid;
+            padding: 20px 10px;
+            font-size: 2.3rem;
+        }
+    }
+   .arrow-down{
+       transition: all 1s ease;
+       animation:arrrow-up-down 550ms infinite ease alternate ;
+    }
+}
+
+.grid{
+    display: grid;
+    width: 100vw;
+    max-width: 1440px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    //for mobile
+    @include responsive($mobile){
+    grid-template-columns: 100vw;
+    grid-template-rows: 1fr;
+    }
+    @include responsive($tab){
+        grid-template-columns: 100vw;
+    grid-template-rows: 1fr;
+    }
+    .griditem{
+        @include flexCenter(space-around,start,column );
+        padding: 9vh 10vw;
+        text-align: left;
+        
+        .fraunces{
+            color: $Very-dark;
+        }
+        .head{
+            font-size: 2.4rem;
+        }
+        .learn-more{
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            border:none;
+            outline:none;
+            background-color: transparent;
+            position: relative;
+           
+            &::after{
+                content: '';
+                width: 110%;
+                height: 13px;
+                @include position(55%,-5% );
+                border-radius: 40px;
+                background-color: $Yellow;
+                opacity: .37;
+                z-index: -1;
+                
+            }
+            &:hover{
+                    cursor: pointer;
+                    &::after{
+                    opacity: 1;
+
+                    }
+                }
+                @include responsive($mobile){
+                    margin: auto;
+                }
+           
+        }
+        
+    .red{
+        //@extend will copy the same styling of selector and 
+        @extend .learn-more;
+        //ampersand refers to parent selector.
+        &::after{
+            background-color:$soft-red
+        }
+        p{
+            color: $Very-dark-grayish;
+        }
+    }
+    @include responsive($mobile){
+        text-align: center;
+            height: 550px;
+            p{
+                margin: 50px 0;
+            }
+        }
+        @include responsive($tab){
+            height: 450px;
+            p{
+                margin: 50px 0;
+            }
+        }
+}
+.imgbox{
+    background: url(/images/desktop/image-transform.jpg) center;
+    background-size: cover;
+        height: 600px
+}
+.box2{
+    @extend .imgbox;
+    background: url(/images/desktop/image-stand-out.jpg) center;
+    // background-size: cover;
+    
+}
+
+.graphic{
+background: url(/images/desktop/image-graphic-design.jpg) center;
+background-size: cover;
+@include flexCenter(flex-end,center ,column );
+padding: auto 100px;
+@include responsive($mobile){
+    height: 600px;
+    padding:0;
+}
+@include responsive($tab){
+    height: 500px;
+    padding: 0;
+}
+.fraunces{
+    font-size: 2.3rem;
+    color:$Dark-desaturate;
+}
+   p{
+       text-align: center;
+    //    min-width: 350px;
+       width: 90%;
+       max-width: 400px;
+       color: $Dark-desaturate;
+       margin: 40px 0 70px 0;
+       font-size: 1.2rem;
+   }
+}
+
+.photography{
+    @extend .graphic;
+    background-image: url(/images/desktop/image-photography.jpg);
+  .fraunces{
+      color: $Dark-blue;
+  }
+  p{
+      color: $Dark-blue;
+  }
+}
+}
+
+//wrapper for clients
+.wrapper{
+    @include flexCenter(space-around,center ,column );
+   
+    padding: 10vh 10vw;
+    width: 100vw;
+    max-width: 1440px;
+    .fraunces{
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 70px;
+        color: $Dark-grayish;
+        @include responsive($mobile){
+            letter-spacing: 2px;
+            font-size: 1.15rem;
+            text-align: center;
+            width: 100vw;
+        }
+    
+    }
+    section{
+        @include flexCenter(center,space-around ,row );
+         //mobile
+    @include responsive($mobile){
+        flex-direction: column;
+    }
+     @include responsive($tab){
+        flex-direction: column;
+    }
+        .clients{
+            @include flexCenter(space-between,center ,column );
+            text-align: center;
+            height: 400px;
+            @include responsive($tab){
+                margin-bottom: 50px;
+                height: 300px;
+                width: 90vw;
+                max-width: 500px;
+            }
+            @include responsive($mobile){
+                margin-bottom: 50px;
+                height: 340px;
+                width: 100vw;
+            }
+           
+            img{
+                border-radius: 50%;
+                border: 4px solid $Very-dark-grayish;
+                height: 100px;
+                width: 100px;
+                &:hover{
+                    border-color: rgb(106, 197, 133);
+                    cursor: pointer;
+                }
+            }
+            p{
+            padding: 0 30px;
+            color: $Very-dark-grayish;
+            }
+            .name{
+               font-family:'Fraunces', serif;
+               color: $Very-dark;
+               margin-bottom: 20px;
+            }
+            .position{
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+//displaying gallery using flex;
+.gallery{
+    @include flexCenter(center, center, row);
+    //to change the display into grid for mobile.
+    @include responsive($mobile){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    width: 100vw;
+    max-width: 1440px;
+    &>div{
+        width: $gallery-width;
+        height:$gallery-width*1.243;
+        @include responsive($mobile){
+            width: 50vw;
+            height: 50vw*1.243;
+            // flex-wrap: wrap;
+        }
+    }
+    &-one{
+        background: url(/images/desktop/image-gallery-milkbottles.jpg) center;
+        background-size: contain;
+    }
+     &-two{
+        background: url(/images/desktop/image-gallery-orange.jpg) center;
+        background-size: contain;
+    }
+     &-three{
+        background: url(/images/desktop/image-gallery-cone.jpg) center;
+        background-size: contain;
+    }
+     &-four{
+        background: url(/images/desktop/image-gallery-sugarcubes.jpg) center;
+        background-size: contain;
+    }
+}
+
+footer{
+    width: 100vw;
+    max-width: 1440px;
+    height: 360px;
+    background: $Dark-moderate2;
+    svg {
+     cursor: pointer;
+    &:hover path{
+            fill: $White;
+        }
+        path{
+        fill: $Dark-desaturate;
+    }
+}
+    @include flexCenter(space-evenly,center,column );
+    .footlinks{
+      @include flexCenter(space-around, center,row );
+      width: 400px;
+      @include responsive($mobile){
+          width: 100vw;
+      }
+      color: $Dark-moderate;
+      .link:hover{
+          color: $White;
+          cursor: pointer;
+      }
+    }
+    .media{
+        @extend .footlinks;
+        width:200px;
+        svg{
+            &:hover path{
+                fill: $White;
+            }
+            path{
+                fill: $Dark-desaturate;
+            }
+        }
+    }
+}
