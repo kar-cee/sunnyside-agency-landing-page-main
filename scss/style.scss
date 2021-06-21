@@ -273,10 +273,16 @@ body {
   }
 
   .graphic {
-    background: url(/images/desktop/image-graphic-design.jpg) center;
-    background-size: cover;
     @include flexCenter(flex-end, center, column);
     padding: auto 100px;
+    position: relative;
+    img{
+      position:absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
     @include responsive($mobile) {
       height: 600px;
       padding: 0;
