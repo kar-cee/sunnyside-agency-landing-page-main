@@ -42,14 +42,14 @@ p {
 }
 
 body {
-  font: 600 18px 'Barlow',sans-serif;
+  font: 600 18px "Barlow", sans-serif;
   color: #818498;
   width: 100vw;
   max-width: 1440px;
 }
 
 .header {
-  background-image: url("../images/desktop/image-header.JPG") center;
+  background: url(/images/desktop/image-header.JPG) center;
   background-size: cover;
   height: 800px;
   width: 100vw;
@@ -92,7 +92,7 @@ body {
     display: inline-block;
     position: absolute;
     top: 1rem;
-    right: .6rem;
+    right: 0.6rem;
   }
 }
 
@@ -178,7 +178,7 @@ body {
 }
 
 .header nav .navlink .link::after {
-  content: '';
+  content: "";
   height: 130%;
   width: 130%;
   border-radius: 6px;
@@ -186,7 +186,7 @@ body {
   top: -15%;
   left: -15%;
   background: #fe7867;
-  opacity: .8;
+  opacity: 0.8;
   z-index: -1;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
@@ -274,7 +274,7 @@ body {
 }
 
 .header h2 {
-  font: 800 3rem 'Fraunces', serif;
+  font: 800 3rem "Fraunces", serif;
   color: white;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -366,7 +366,7 @@ body {
 }
 
 .grid .griditem .learn-more::after, .grid .griditem .red::after {
-  content: '';
+  content: "";
   width: 110%;
   height: 13px;
   position: absolute;
@@ -374,7 +374,7 @@ body {
   left: -5%;
   border-radius: 40px;
   background-color: #fad400;
-  opacity: .37;
+  opacity: 0.37;
   z-index: -1;
 }
 
@@ -609,7 +609,7 @@ body {
 }
 
 .wrapper section .clients .name {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   color: #23303e;
   margin-bottom: 20px;
 }
@@ -659,24 +659,16 @@ body {
   }
 }
 
-.gallery-one {
-  background: url(/images/desktop/image-gallery-milkbottles.jpg) center;
-  background-size: contain;
+.gallery div > img {
+  width: 25vw;
+  height: 31.075vw;
 }
 
-.gallery-two {
-  background: url(/images/desktop/image-gallery-orange.jpg) center;
-  background-size: contain;
-}
-
-.gallery-three {
-  background: url(/images/desktop/image-gallery-cone.jpg) center;
-  background-size: contain;
-}
-
-.gallery-four {
-  background: url(/images/desktop/image-gallery-sugarcubes.jpg) center;
-  background-size: contain;
+@media screen and (max-width: 488px) {
+  .gallery div > img {
+    width: 50vw;
+    height: 62.15vw;
+  }
 }
 
 footer {
