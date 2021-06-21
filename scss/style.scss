@@ -276,12 +276,14 @@ body {
     @include flexCenter(flex-end, center, column);
     padding: auto 100px;
     position: relative;
+    z-index: 10;
     img{
       position:absolute;
       top: 0;
       left: 0;
       height: 100%;
       width: 100%;
+      z-index: -1;
     }
     @include responsive($mobile) {
       height: 600px;
