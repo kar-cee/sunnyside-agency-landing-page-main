@@ -46,11 +46,26 @@ body {
   color: #818498;
   width: 100vw;
   max-width: 1440px;
+  position: relative;
+}
+
+body .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 1440px;
+  height: 800px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 488px) {
+  body .bg {
+    height: 143vw;
+  }
 }
 
 .header {
-  background: url(/images/desktop/image-header.JPG) center;
-  background-size: cover;
   height: 800px;
   width: 100vw;
   max-width: 1440px;
@@ -81,8 +96,6 @@ body {
 
 @media screen and (max-width: 488px) {
   .header {
-    background: url(/images/mobile/image-header.jpg) center;
-    background-size: contain;
     width: 100vw;
     height: 143vw;
     text-align: center;
@@ -419,14 +432,25 @@ body {
   }
 }
 
-.grid .imgbox, .grid .box2 {
-  background: url(/images/desktop/image-transform.jpg) center;
-  background-size: cover;
-  height: 600px;
+.grid .imgbox img, .grid .box2 img {
+  width: 50vw;
+  max-width: 720px;
+  height: 60vw;
+  max-height: 600px;
 }
 
-.grid .box2 {
-  background: url(/images/desktop/image-stand-out.jpg) center;
+@media screen and (max-width: 488px) {
+  .grid .imgbox img, .grid .box2 img {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 488px) {
+  .grid .imgbox img, .grid .box2 img {
+    width: 100vw;
+    max-width: 800px;
+    height: 900px;
+  }
 }
 
 .grid .graphic, .grid .photography {
