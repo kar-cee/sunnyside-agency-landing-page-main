@@ -49,7 +49,7 @@ body {
 }
 
 .header {
-  background: url(/images/desktop/image-header.JPG) center;
+  background: url(../images/desktop/image-header.JPG) center;
   background-size: cover;
   height: 800px;
   width: 100vw;
@@ -81,7 +81,7 @@ body {
 
 @media screen and (max-width: 488px) {
   .header {
-    background: url(/images/mobile/image-header.jpg) center;
+    background: url(../images/mobile/image-header.jpg) center;
     background-size: contain;
     width: 100vw;
     height: 143vw;
@@ -307,9 +307,7 @@ body {
   display: grid;
   width: 100vw;
   max-width: 1440px;
-  -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
 }
 
@@ -420,17 +418,17 @@ body {
 }
 
 .grid .imgbox, .grid .box2 {
-  background: url(/images/desktop/image-transform.jpg) center;
+  background: url(../images/desktop/image-transform.jpg) center;
   background-size: cover;
   height: 600px;
 }
 
 .grid .box2 {
-  background: url(/images/desktop/image-stand-out.jpg) center;
+  background: url(../images/desktop/image-stand-out.jpg) center;
 }
 
 .grid .graphic, .grid .photography {
-  background: url(/images/desktop/image-graphic-design.jpg) center;
+  background: url(../images/desktop/image-graphic-design.jpg) center;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -477,7 +475,7 @@ body {
 }
 
 .grid .photography {
-  background-image: url(/images/desktop/image-photography.jpg);
+  background-image: url(../images/desktop/image-photography.jpg);
 }
 
 .grid .photography .fraunces {
@@ -660,22 +658,22 @@ body {
 }
 
 .gallery-one {
-  background: url(/images/desktop/image-gallery-milkbottles.jpg) center;
+  background: url(../images/desktop/image-gallery-milkbottles.jpg) center;
   background-size: contain;
 }
 
 .gallery-two {
-  background: url(/images/desktop/image-gallery-orange.jpg) center;
+  background: url(../images/desktop/image-gallery-orange.jpg) center;
   background-size: contain;
 }
 
 .gallery-three {
-  background: url(/images/desktop/image-gallery-cone.jpg) center;
+  background: url(../images/desktop/image-gallery-cone.jpg) center;
   background-size: contain;
 }
 
 .gallery-four {
-  background: url(/images/desktop/image-gallery-sugarcubes.jpg) center;
+  background: url(../images/desktop/image-gallery-sugarcubes.jpg) center;
   background-size: contain;
 }
 
